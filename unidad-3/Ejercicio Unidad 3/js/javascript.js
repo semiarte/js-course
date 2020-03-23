@@ -8,7 +8,10 @@ function recogeDatos(evento) {
   var saludo;
   var mensajeEdad;
 
-  if (edad > 33) {
+  if (nombre == "" || fecha == "") {
+    alert("Por favor, completa los dos campos");
+    return false;
+  } else if (edad > 33) {
     mensajeEdad = "viejuno";
   } else if (edad < 33) {
     mensajeEdad = "jovenzuelo";
