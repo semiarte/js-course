@@ -4,8 +4,33 @@ function recogeDatos(evento) {
   var nombre = document.querySelector("#nombre").value;
   var fecha = document.querySelector("#fecha").value;
   var edad = 2019 - fecha;
-
   var bienvenida = document.querySelector("#bienvenida");
+  var saludo;
+  var mensajeEdad;
+
+  if (edad > 33) {
+    mensajeEdad = "viejuno";
+  } else if (edad < 33) {
+    mensajeEdad = "jovenzuelo";
+  } else {
+    mensajeEdad = "la edad de Cristo";
+  }
+
+  var saludo =
+    "<p>Hola" +
+    " " +
+    nombre +
+    " " +
+    "tienes " +
+    edad +
+    " " +
+    "años de edad," +
+    " " +
+    "<strong>" +
+    mensajeEdad +
+    "</strong></p>";
+
+  bienvenida.innerHTML = saludo;
 
   // EJERCICIO: declara las variables necesarias (puedes necesitar
   // más de una) para componer el mensaje de bienvenida
@@ -17,7 +42,7 @@ function recogeDatos(evento) {
   // está vacío y modificar el mensaje de bienvenida para pedir
   // Que se rellene
 
-  // EJERCICIO: Realiza la composició del mensaje final y cárgalo
+  // EJERCICIO: Realiza la composición del mensaje final y cárgalo
   // en la variable que hayas preparado
 
   // EJERCICIO: Añade el mensaje final como contenido HTML del
