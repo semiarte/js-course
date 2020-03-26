@@ -3,7 +3,9 @@ function recogeDatos(evento) {
 
   var nombre = document.querySelector("#nombre").value;
   var fecha = document.querySelector("#fecha").value;
-  var edad = 2019 - fecha;
+  var fechaActual = new Date();
+  var year = fechaActual.getFullYear();
+  var edad = year - fecha;
   var bienvenida = document.querySelector("#bienvenida");
   var saludo;
   var mensajeEdad;

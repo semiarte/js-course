@@ -59,3 +59,23 @@ main {
 .tarjeta.descubierta {
   transform: rotateY(-180deg);
 }
+
+.reparteCartas_btn {
+  display: block;
+  width: auto;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 5%;
+  cursor: pointer;
+  border: 0;
+  background-image: var(--gradient);
+  padding: 0.75rem 4rem;
+  border-radius: 5rem;
+  color: white;
+  font-family: var(--font-display);
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  line-height: 1;
+  transition: 0.3s;
+}

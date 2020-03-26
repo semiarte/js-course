@@ -2,7 +2,7 @@ var grupoTarjetas = ["🦄", "🍦", "🌈", "👽", "👾", "🤖", "👹", "�
 
 // EJERCICIO: concatena grupoTarjetas consigo misma para duplicar
 // los valores
-var totalTarjetas = grupoTarjetas;
+var totalTarjetas = grupoTarjetas.concat(grupoTarjetas);
 
 function barajaTarjetas() {
   var resultado;
@@ -16,6 +16,17 @@ function reparteTarjetas() {
   var mesa = document.querySelector("#mesa");
   var tarjetasBarajadas = barajaTarjetas();
   mesa.innerHTML = "";
+
+  tarjetasBarajadas.forEach(function(elemento) {
+    var card = document.createElement("div");
+    card.innerHTML =
+      '<div class="tarjeta">' +
+      '<div class="tarjeta__contenido">' +
+      elemento +
+      "</div>" +
+      "</div>";
+    mesa.appendChild(card);
+  });
 
   // EJERCICIO: recorre el array de tarjetasBarajadas y para cada
   // elemento, crea un div (cárgalo en una variable) y declara que su
@@ -34,8 +45,12 @@ function descubrir() {
   this.classList.add("descubierta");
 }
 
-reparteTarjetas();
+function empiezaJuego() {
+  reparteTarjetas();
+  document.querySelectorAll(".tarjeta").forEach(function(elemento) {
+    elemento.addEventListener("click", descubrir);
+  });
+}
 
-document.querySelectorAll(".tarjeta").forEach(function(elemento) {
-  elemento.addEventListener("click", descubrir);
-});
+var btn = document.querySelector(".reparteCartas_btn");
+btn.addEventListener("click", empiezaJuego);
