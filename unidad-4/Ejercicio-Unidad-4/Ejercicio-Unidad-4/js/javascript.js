@@ -6,7 +6,7 @@ var totalTarjetas = grupoTarjetas.concat(grupoTarjetas);
 
 function barajaTarjetas() {
   var resultado;
-  resultado = totalTarjetas.sort(function() {
+  resultado = totalTarjetas.sort(function () {
     return 0.5 - Math.random();
   });
   return resultado;
@@ -17,7 +17,7 @@ function reparteTarjetas() {
   var tarjetasBarajadas = barajaTarjetas();
   mesa.innerHTML = "";
 
-  tarjetasBarajadas.forEach(function(elemento) {
+  tarjetasBarajadas.forEach(function (elemento) {
     var card = document.createElement("div");
     card.innerHTML =
       '<div class="tarjeta">' +
@@ -47,7 +47,7 @@ function descubrir() {
 
 function empiezaJuego() {
   reparteTarjetas();
-  document.querySelectorAll(".tarjeta").forEach(function(elemento) {
+  document.querySelectorAll(".tarjeta").forEach(function (elemento) {
     elemento.addEventListener("click", descubrir);
   });
 }
