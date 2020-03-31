@@ -14,6 +14,6 @@ function despliegaBloque(evento) {
   document.querySelector(objetivo).classList.add("activo");
 }
 
-document.querySelectorAll(".lanzador").forEach(function(elemento) {
+document.querySelectorAll(".lanzador").forEach(function (elemento) {
   elemento.addEventListener("click", despliegaBloque);
 });
